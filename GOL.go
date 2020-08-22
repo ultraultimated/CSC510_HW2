@@ -1,5 +1,4 @@
 //Referred awk code from gist.github/timm
-//Author:Devarsh Shah 
 package main
 
 import (
@@ -48,6 +47,7 @@ func live(currentState []int, rows int, generations int, length int) {
    }
    var nextState = make([]int, length)
    for x := 0; x < len(currentState); x++ {
+      //-7%2=-1 in golang, so ((x-1)%length+length)%length gives -7%2=1
       neighbours = currentState[((x-1)%length+length)%length] + currentState[((x+1)%length+length)%length] + currentState[((x-rows-1)%length+length)%length] + currentState[((x-rows)%length+length)%length] + currentState[((x-rows+1)%length+length)%length] + currentState[((x+rows-1)%length+length)%length] + currentState[((x+rows)%length+length)%length] + currentState[((x+rows+1)%length+length)%length]
       nextState[x] = currentState[x]
       if currentState[x] == 0 {
