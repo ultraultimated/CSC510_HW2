@@ -59,6 +59,7 @@ func live(currentState []int, rows int, generations int, length int) {
          fmt.Println()
       }
    }
+   //Comment var nextState for lifeCustom
    var nextState = make([]int, length)
    //var nextState [30]int
    for x := 0; x < len(currentState); x++ {
