@@ -7,7 +7,6 @@ matrix:
         - cd code/Scala
       script:
         - scalac -classpath . -d . GOL.scala
-        - scala -classpath . Main
       after_success:
         - echo "Build Success"
 
