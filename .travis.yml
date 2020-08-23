@@ -2,24 +2,18 @@ matrix:
   include:
     - language: scala
       scala:
-        - 2.13.1
-      jdk:
-        - openjdk8
-      before_install:
-        - cd code/Scala
-      after_success:
-        - echo "Build Success"
+        - 2.9.3
+        - 2.11.11
 
     - language: ruby
-        ruby:
-          - 2.6.3
-        before_install:
-          - cd code/Ruby
-        after_success:
-          - echo "Build Success"
+      rvm:
+        - 2.5
+        - 2.6
+        - jruby
+        - truffleruby
 
     - language: go
       go:
         - 1.x
-        - master
+        - master 
 
