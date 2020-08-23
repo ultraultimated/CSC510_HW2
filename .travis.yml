@@ -1,39 +1,34 @@
-include:
-  - language: scala
-    scala:
-      - 2.13.1
-    before_install:
-      - cd code/Scala
-    script:
-      - scalac -classpath . -d . GOL.scala
-      - scala -classpath . Main
-    after_success:
-      - echo "Build Success"
-
-  - language: ruby
-      ruby:
-        - 2.6.3
+matrix:
+  include:
+    - language: scala
+      scala:
+        - 2.13.1
       before_install:
-        - cd code/Ruby
+        - cd code/Scala
       script:
-        - ruby GOL.rb
+        - scalac -classpath . -d . GOL.scala
+        - scala -classpath . Main
       after_success:
         - echo "Build Success"
 
-  - language: go
-    go:
-      - 1.14.2
-    before_install:
-      - cd code/GO
-    script:
-      - go run GOL.go
-    after_success:
-      - echo "Build Success"
+    - language: ruby
+        ruby:
+          - 2.6.3
+        before_install:
+          - cd code/Ruby
+        script:
+          - ruby GOL.rb
+        after_success:
+          - echo "Build Success"
 
-notifications:
-email:
-  - dshah3@ncsu.edu
-  - nnparik2@ncsu.edu
-  - bpatel24@ncsu.edu
-  - kdave@ncsu.edu
-  - rghorse@ncsu.edu
+    - language: go
+      go:
+        - 1.14.2
+      before_install:
+        - cd code/GO
+      script:
+        - go run GOL.go
+      after_success:
+        - echo "Build Success"
+
+  
