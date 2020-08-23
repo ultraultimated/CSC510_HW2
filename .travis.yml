@@ -1,20 +1,31 @@
-matrix:
-  include:
-    - language: scala
-      scala:
-        - stable
+include:
+  - language: scala
+    scala:
+      - 2.13.1
+    before_install:
+      - cd code/Scala
+    script:
+      - scalac -classpath . -d . GOL.scala
+      - scala -classpath . Main
+    after_success:
+      - echo "Build Success"
+
+  - language: ruby
+      ruby:
+        - 2.6.3
       before_install:
-        - cd code/Scala
+        - cd code/Ruby
+      script:
+        - ruby GOL.rb
       after_success:
-        - echo "Test Success"
+        - echo "Build Success"
 
-    - language: ruby
-      rvm:
-        - 2.6
-        - jruby
-        - truffleruby
-
-    - language: go
-      go:
-        - 1.14
-        - master  
+  - language: go
+    go:
+      - 1.14.2
+    before_install:
+      - cd code/GO
+    script:
+      - go run GOL.go
+    after_success:
+      - echo "Build Success"
