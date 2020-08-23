@@ -1,6 +1,7 @@
 //Referred awk code from gist.github/timm
 package main
 
+//need to comment math/rand for lifeCustom
 import (
    "fmt"
    "math/rand"
@@ -8,8 +9,8 @@ import (
    "time"
 )
 
-//Function to initialize the matrix with cells
-func life(rows int, cols int, threshold float64, generations int) {
+//Function to initialize random matrix with cells
+func lifeRandom(rows int, cols int, threshold float64, generations int) {
    var length int = rows * cols
    var initialState = make([]int, length)
    for i := 0; i < length; i++ {
@@ -23,7 +24,20 @@ func life(rows int, cols int, threshold float64, generations int) {
 
 }
 
+//Function to initialize custom matrix with cells
+/*
+func lifeCustom(rows int, cols int, generations int) {
+    initialState := [30]int{
+      0, 0, 0, 0, 0,0,
+      0, 1, 0, 0, 0,0,
+      0, 0, 1, 1, 1,0,
+      0, 0, 0, 0, 0,0,
+      0, 0, 0, 0, 0,0}
+   live(initialState,rows,generations,30)
+}*/
+
 //Function to generate neighbours based on GOL's 4 rules
+//Change currentState []int to currentState[30]int
 func live(currentState []int, rows int, generations int, length int) {
 
    if generations < 1 {
@@ -46,6 +60,7 @@ func live(currentState []int, rows int, generations int, length int) {
       }
    }
    var nextState = make([]int, length)
+   //var nextState [30]int
    for x := 0; x < len(currentState); x++ {
       //-7%2=-1 in golang, so ((x-1)%length+length)%length gives -7%2=1
       neighbours = currentState[((x-1)%length+length)%length] + currentState[((x+1)%length+length)%length] + currentState[((x-rows-1)%length+length)%length] + currentState[((x-rows)%length+length)%length] + currentState[((x-rows+1)%length+length)%length] + currentState[((x+rows-1)%length+length)%length] + currentState[((x+rows)%length+length)%length] + currentState[((x+rows+1)%length+length)%length]
@@ -72,5 +87,7 @@ func live(currentState []int, rows int, generations int, length int) {
 
 //Main function 
 func main() {
-   life(50, 20, 0.3, 20)
+   lifeRandom(50, 20, 0.3, 20)
+   //lifeCustom(6,5,20)
+   //Whenever blank input comes it has reached stable state.
 }
