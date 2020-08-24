@@ -1,0 +1,8 @@
+language = "go"
+run = "go run code/GO/GOL.go"
+
+#language = "ruby"
+#run = "ruby code/Ruby/GOL.rb"
+
+#language = "scala"
+#run = "scalac -classpath . -d . code/Scala/GOL.scala && scala -classpath . GOL"
