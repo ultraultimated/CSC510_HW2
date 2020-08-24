@@ -4,7 +4,8 @@
 # CSC510_HW2
 Homework repository for CSC 510
 
-#Run Instructions:
+# Run Instructions:
+
 Click on repl.it badge. Edit .replit file
 
 - Golang
