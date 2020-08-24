@@ -24,6 +24,12 @@ run = "ruby code/Ruby/GOL.rb"
 
 - Scala
 
+```
+language = "scala"
+run = "scalac -classpath . -d . code/Scala/GOL.scala && scala -classpath . GOL"
+```
+
+
 
 
 ## GROUP:
