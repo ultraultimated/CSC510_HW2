@@ -4,6 +4,27 @@
 # CSC510_HW2
 Homework repository for CSC 510
 
+#Run Instructions:
+Click on repl.it badge. Edit .replit file
+
+- Golang
+
+```
+language = "go"
+run = "go run code/GO/GOL.go"
+```
+
+- Ruby
+
+```
+language = "ruby"
+run = "ruby code/Ruby/GOL.rb"
+```
+
+- Scala
+
+
+
 ## GROUP:
 1) Bin Patel (bpatel24)
 2) Devarsh Shah (dshah3)
