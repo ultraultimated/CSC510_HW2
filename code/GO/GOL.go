@@ -62,7 +62,7 @@ func live(currentState []int, rows int, generations int, length int) {
    //Comment var nextState for lifeCustom
    var nextState = make([]int, length)
    //var nextState [30]int
-   for x := 0; x < len(currentState); x++ {
+   for x = 0; x < len(currentState); x++ {
       //-7%2=-1 in golang, so ((x-1)%length+length)%length gives -7%2=1
       neighbours = currentState[((x-1)%length+length)%length] + currentState[((x+1)%length+length)%length] + currentState[((x-rows-1)%length+length)%length] + currentState[((x-rows)%length+length)%length] + currentState[((x-rows+1)%length+length)%length] + currentState[((x+rows-1)%length+length)%length] + currentState[((x+rows)%length+length)%length] + currentState[((x+rows+1)%length+length)%length]
       nextState[x] = currentState[x]
@@ -73,7 +73,7 @@ func live(currentState []int, rows int, generations int, length int) {
             nextState[x] = 0
          }
       } else {
-         if neighbours == 2 || neighbours == 3 {
+         if neighbours == 3 || neighbours == 4 {
             nextState[x] = 1
          } else {
             nextState[x] = 0
