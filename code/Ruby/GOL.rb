@@ -5,14 +5,14 @@ def live(currentState, rows, generations, length)
     print "\nGenerations "+generations.to_s.rjust(3, "0")+"\n"
 
     count = 0
-    for x in 0..(length)
-        if(nextState[x] == 1)
+    for x in 0..(currentState.length)
+        if(currentState[x] == 1)
             print "*"
         else
             print " "
         end
-        count -= 1
-        if((count / rows) == 0)
+        count++
+        if((count % rows) == 0)
             print "\n"
         end
     end
@@ -39,7 +39,7 @@ def live(currentState, rows, generations, length)
     end
     generations += 1
     sleep 2
-    live(currentState, rows, generations, length)
+    live(nextState, rows, generations, length)
 end
 
 
