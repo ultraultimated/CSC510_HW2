@@ -37,7 +37,7 @@ run = "scalac -classpath . -d . code/Scala/GOL.scala && scala -classpath . GOL"
 2) Devarsh Shah (dshah3)
 3) Karan Dave (kdave)
 4) Neel Parikh (nnparik2)
-5) Ritesh Gorse (rghorse)
+5) Ritesh Ghorse (rghorse)
 
 ## Reference for Test Cases:
 1) Conway's Game of Life: http://pi.math.cornell.edu/~lipa/mec/lesson6.html 
