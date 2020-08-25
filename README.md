@@ -45,10 +45,21 @@ We have introduced two bugs for each language i.e Go, Ruby and Scala.
 * <b>Compilation Bug</b>: This bug will be more language specific and our intention will be to analyze how the compiler error messages help while debugging syntatctic bugs.
 * <b>Logical Bug</b>: This bug will be more specific to implementation and our intention will be to analyze how readable and friendly the language is.
 
+During the experinents, following steps will be performed:
+1) Click on the repl badge.
+2) To run the program, follow the steps as mentioned [above] (# Run Instructions)
+3) Fill out the post evaluation form [here] (https://docs.google.com/forms/d/e/1FAIpQLSf9GUf4OV2xPpL0iZznrvSeS0LzEJndorxmxxVVGwjSoXwShA/viewform?usp=sf_link)
+
+
 ## Evaluation Method:
 The evaluation method is a 2 part process. 
-1. Google form to understand the familiarity of language.
-2. Manual Observation during dubugging.
+1. <b> Post Evaluation form </b> - This form evaluates the familiarity of user with different languages.
+2. <b> Manual Observation during debugging </b>
+    * Was the user able to find the compilation and logical bug?
+    * Time taken to find the bug?
+    * Number of times the code was run?
+
+The final evaluation will be done by congregating the results of manual observation and post evaluation form.
 
 ## GROUP:
 1) Bin Patel (bpatel24)
