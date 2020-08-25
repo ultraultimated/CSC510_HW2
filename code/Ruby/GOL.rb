@@ -39,7 +39,7 @@ def live(currentState, rows, generations, length)
             end
         end
     end
-    generations -= 1
+    generations += 1
     sleep 2
     live(nextState, rows, generations, length)
 end
