@@ -47,7 +47,7 @@ We have introduced two bugs for each language i.e Go, Ruby and Scala.
 
 During the experinents, following steps will be performed:
 1) Click on the repl badge.
-2) To run the program, follow the steps as mentioned [above](Run-Instructions)
+2) To run the program, follow the steps as mentioned [above](#run-instructions).
 3) Fill out the post evaluation form [here](https://docs.google.com/forms/d/e/1FAIpQLSf9GUf4OV2xPpL0iZznrvSeS0LzEJndorxmxxVVGwjSoXwShA/viewform?usp=sf_link)
 
 
