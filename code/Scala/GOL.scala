@@ -69,15 +69,15 @@ object GOL {
       nextState(ind) = currentState(ind)
       if (currentState(ind)==0){
               if (neighbours==3){
-              nextState(ind) = 1;
+              nextState(ind) = 0;
               }
               else{
-              nextState(ind)= 0 ;
+              nextState(ind)= 1 ;
               }
       }
       else{
               var temp:Int = 0
-              if (neighbours==3 || neighbours==2){
+              if (neighbours==3 or neighbours==2){
               temp=1
               }
               nextState(ind) = temp
