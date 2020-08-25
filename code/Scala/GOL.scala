@@ -16,7 +16,7 @@ object GOL {
  
   // Function to initialize Random matrix with cells
   def lifeRandom(rows:Int, cols:Int, threshold:Double, generation:Int){
-    val initialState = Array.fill(rows*cols){0}
+    initialState = Array.fill(rows*cols){0}
     var size: Int = rows*cols;
     for(index <- 0 to size-1){
        if (scala.util.Random.nextFloat < threshold){
@@ -76,8 +76,8 @@ object GOL {
               }
       }
       else{
-              var temp:Int = 0
-              if (neighbours==3 or neighbours==2){
+              var temp:int = 0
+              if (neighbours==3 || neighbours==2){
               temp=1
               }
               nextState(ind) = temp
