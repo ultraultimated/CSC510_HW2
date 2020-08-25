@@ -15,7 +15,7 @@ At each step in time, the following transitions occur:
   <img src="https://github.com/ultraultimated/CSC510_HW2/blob/master/GOL.png">
 </p>
 
-# Run Instructions:
+## Run Instructions:
 
 Click on repl.it badge. Edit .replit file
 
@@ -47,8 +47,8 @@ We have introduced two bugs for each language i.e Go, Ruby and Scala.
 
 During the experinents, following steps will be performed:
 1) Click on the repl badge.
-2) To run the program, follow the steps as mentioned [above] (# Run Instructions)
-3) Fill out the post evaluation form [here] (https://docs.google.com/forms/d/e/1FAIpQLSf9GUf4OV2xPpL0iZznrvSeS0LzEJndorxmxxVVGwjSoXwShA/viewform?usp=sf_link)
+2) To run the program, follow the steps as mentioned [above](Run-Instructions)
+3) Fill out the post evaluation form [here](https://docs.google.com/forms/d/e/1FAIpQLSf9GUf4OV2xPpL0iZznrvSeS0LzEJndorxmxxVVGwjSoXwShA/viewform?usp=sf_link)
 
 
 ## Evaluation Method:
