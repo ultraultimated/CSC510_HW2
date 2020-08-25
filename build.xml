@@ -1,0 +1,7 @@
+
+<?xml version = "1.0"?>
+<project name = "GOL CODE" default = "info">
+   <target name = "info">
+      <echo>Welcome to GOL!</echo>
+   </target>
+</project>
