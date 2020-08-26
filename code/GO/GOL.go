@@ -38,8 +38,8 @@ func lifeCustom(rows int, cols int, generations int) {
 }
 
 //Function to generate neighbours 
-//Change currentState [16]int to currentState[]int
-func live(currentState [16]int, rows int, generations int, length int) {
+
+func live(currentState int, rows int, generations int, length int) {
 
    if generations < 1 {
       os.Exit(0)
