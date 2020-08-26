@@ -39,7 +39,7 @@ func lifeCustom(rows int, cols int, generations int) {
 }
 
 //Function to generate neighbours 
-var length int =0
+
 func live(currentState int, rows int, generations int, length int) {
 
    if generations < 1 {
@@ -64,7 +64,7 @@ func live(currentState int, rows int, generations int, length int) {
       }
    }
    
-   //var nextState = make([]int, length)
+   
    var nextState [16]int
    for x := 0; x < len(currentState); x++ {
       //-7%2=-1 in golang, so ((x-1)%length+length)%length gives -7%2=1
