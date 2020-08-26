@@ -34,12 +34,13 @@ func lifeCustom(rows int, cols int, generations int) {
       0, 1, 0, 0,
       0, 0, 0, 0, 
       }
+      //Expected output is all cells will die i.e blank screen
    live(initialState,rows,generations,16)
 }
 
 //Function to generate neighbours 
 
-func live(currentState int, rows int, generations int, length int) {
+func live(currentState[16] int, rows int, generations int, length int) {
 
    if generations < 1 {
       os.Exit(0)
@@ -68,9 +69,9 @@ func live(currentState int, rows int, generations int, length int) {
       //-7%2=-1 in golang, so ((x-1)%length+length)%length gives -7%2=1
       
       neighbours = currentState[((x-1)%length+length)%length] + currentState[((x+1)%length+length)%length] + currentState[((x-rows-1)%length+length)%length] + currentState[((x-rows)%length+length)%length] + currentState[((x-rows+1)%length+length)%length] + currentState[((x+rows-1)%length+length)%length] + currentState[((x+rows)%length+length)%length] + currentState[((x+rows+1)%length+length)%length]
-      nextState[x] = currentState[x]
-      if currentState[x] == 0 {
-         if neighbours == 3 {
+      nextState[x]=currentState[x]
+      if currentState[x] == 1 {
+         if neighbours == 3 || neighbours == 2{
             nextState[x] = 1
          } else 
          {
@@ -78,7 +79,7 @@ func live(currentState int, rows int, generations int, length int) {
          }
       } else 
       {
-         if neighbours == 3 || neighbours == 2 {
+         if neighbours == 3 {
             nextState[x] = 1
          } else 
          {
