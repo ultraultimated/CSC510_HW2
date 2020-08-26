@@ -39,13 +39,14 @@ func lifeCustom(rows int, cols int, generations int) {
 }
 
 //Function to generate neighbours 
-
-func live(currentState[16] int, rows int, generations int, length int) {
+var length int =0
+func live(currentState int, rows int, generations int, length int) {
 
    if generations < 1 {
       os.Exit(0)
    }
-   var neighbours int
+
+  
    fmt.Printf("\033[1;1H")
    fmt.Printf("\033[2J")
    fmt.Printf("Generation %d\n", generations)
@@ -67,7 +68,7 @@ func live(currentState[16] int, rows int, generations int, length int) {
    var nextState [16]int
    for x := 0; x < len(currentState); x++ {
       //-7%2=-1 in golang, so ((x-1)%length+length)%length gives -7%2=1
-      
+      var neighbours int
       neighbours = currentState[((x-1)%length+length)%length] + currentState[((x+1)%length+length)%length] + currentState[((x-rows-1)%length+length)%length] + currentState[((x-rows)%length+length)%length] + currentState[((x-rows+1)%length+length)%length] + currentState[((x+rows-1)%length+length)%length] + currentState[((x+rows)%length+length)%length] + currentState[((x+rows+1)%length+length)%length]
       nextState[x]=currentState[x]
       if currentState[x] == 1 {
@@ -80,10 +81,10 @@ func live(currentState[16] int, rows int, generations int, length int) {
       } else 
       {
          if neighbours == 3 {
-            nextState[x] = 1
+            nextState[x] = 0
          } else 
          {
-            nextState[x] = 0
+            nextState[x] = 1
          }
       }
 
