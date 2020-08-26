@@ -8,7 +8,6 @@ import (
    "time"
 )
 
-
 //Function to initialize random matrix with cells
 /*
 func lifeRandom(rows int, cols int, threshold float64, generations int) {
@@ -29,18 +28,18 @@ func lifeRandom(rows int, cols int, threshold float64, generations int) {
 //Function to initialize custom matrix with cells
 
 func lifeCustom(rows int, cols int, generations int) {
-    initialState := [30]int{
-      0, 0, 0, 0, 0,0,
-      0, 1, 0, 0, 0,0,
-      0, 0, 1, 1, 1,0,
-      0, 0, 0, 0, 0,0,
-      0, 0, 0, 0, 0,0}
-   live(initialState,rows,generations,30)
+    initialState := [16]int{
+      0, 0, 1, 0, 
+      0, 1, 0, 0, 
+      0, 1, 0, 0,
+      0, 0, 0, 0, 
+      }
+   live(initialState,rows,generations,16)
 }
 
-//Function to generate neighbours based on GOL's 4 rules
-//Change currentState [30]int to currentState[]int
-func live(currentState [30]int, rows int, generations int, length int) {
+//Function to generate neighbours 
+//Change currentState [16]int to currentState[]int
+func live(currentState [16]int, rows int, generations int, length int) {
 
    if generations < 1 {
       os.Exit(0)
@@ -53,7 +52,8 @@ func live(currentState [30]int, rows int, generations int, length int) {
    for x := 0; x < len(currentState); x++ {
       if currentState[x] == 1 {
          fmt.Print("*")
-      } else {
+      } else 
+      {
          fmt.Print(" ")
       }
       count += 1
@@ -61,20 +61,20 @@ func live(currentState [30]int, rows int, generations int, length int) {
          fmt.Println()
       }
    }
-   //Comment var nextState for lifeCustom
+   
    //var nextState = make([]int, length)
-   var nextState [30]int
+   var nextState [16]int
    for x := 0; x < len(currentState); x++ {
       //-7%2=-1 in golang, so ((x-1)%length+length)%length gives -7%2=1
       
       neighbours = currentState[((x-1)%length+length)%length] + currentState[((x+1)%length+length)%length] + currentState[((x-rows-1)%length+length)%length] + currentState[((x-rows)%length+length)%length] + currentState[((x-rows+1)%length+length)%length] + currentState[((x+rows-1)%length+length)%length] + currentState[((x+rows)%length+length)%length] + currentState[((x+rows+1)%length+length)%length]
       nextState[x] = currentState[x]
       if currentState[x] == 0 {
-         if neighbours != 3 {
-            nextState[x] = 0
+         if neighbours == 3 {
+            nextState[x] = 1
          } else 
          {
-            nextState[x] = 1
+            nextState[x] = 0
          }
       } else 
       {
@@ -95,5 +95,5 @@ func live(currentState [30]int, rows int, generations int, length int) {
 //Main function 
 func main() {
    //lifeRandom(50, 20, 0.3, 20)
-   lifeCustom(6,5,20)
+   lifeCustom(4,4,5)
 }
