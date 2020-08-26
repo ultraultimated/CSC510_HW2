@@ -67,7 +67,14 @@ func live(currentState [30]int, rows int, generations int, length int) {
    for x := 0; x < len(currentState); x++ {
       //-7%2=-1 in golang, so ((x-1)%length+length)%length gives -7%2=1
       
-     
+      neighbours = currentState[((x-1)%length+length)%length] + currentState[((x+1)%length+length)%length] + currentState[((x-rows-1)%length+length)%length] + currentState[((x-rows)%length+length)%length] + currentState[((x-rows+1)%length+length)%length] + currentState[((x+rows-1)%length+length)%length] + currentState[((x+rows)%length+length)%length] + currentState[((x+rows+1)%length+length)%length]
+      nextState[x] = currentState[x]
+      if currentState[x] == 0 {
+         if neighbours != 3 {
+            nextState[x] = 0
+         } else 
+         {
+            nextState[x] = 1
          }
       } else 
       {
